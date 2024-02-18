@@ -1,2 +1,1 @@
-# tempo-pal
-Minimal metronome application for mobile platforms.
+This file will be updated eventually.
