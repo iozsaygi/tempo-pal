@@ -4,8 +4,9 @@ Tempo Pal is a minimal metronome application that is currently under development
 
 ## Third-party
 
-- [TextMesh Pro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html)
+- [DOTween](https://dotween.demigiant.com/)
 - [Poppins](https://fonts.google.com/specimen/Poppins)
+- [TextMesh Pro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html)
 
 ## License
 
