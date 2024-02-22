@@ -7,7 +7,7 @@ namespace AAA.Source.Platform.Runtime
     {
         [SerializeField] private PlatformConfiguration platformConfiguration;
 
-        public override void Initialize()
+        public override void Initialize(ServiceController serviceController)
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = platformConfiguration.TargetFrameRate;

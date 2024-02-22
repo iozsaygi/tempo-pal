@@ -20,6 +20,19 @@ namespace AAA.Source.Service.Runtime
             DestroyApplicationServices();
         }
 
+        public T GetRuntimeApplicationServiceByType<T>() where T : ApplicationService
+        {
+            for (byte i = 0; i < runtimeApplicationServices.Length; i++)
+            {
+                if (runtimeApplicationServices[i] is T)
+                {
+                    return runtimeApplicationServices[i] as T;
+                }
+            }
+
+            return null;
+        }
+
         private void InstantiateApplicationServices()
         {
             runtimeApplicationServices = new ApplicationService[applicationServicePrefabs.Length];
@@ -36,7 +49,7 @@ namespace AAA.Source.Service.Runtime
         private void InitializeApplicationServices()
         {
             for (byte i = 0; i < runtimeApplicationServices.Length; i++)
-                runtimeApplicationServices[i].Initialize();
+                runtimeApplicationServices[i].Initialize(this);
         }
 
         private void ShutdownApplicationServices()
