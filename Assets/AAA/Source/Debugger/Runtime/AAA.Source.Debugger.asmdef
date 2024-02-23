@@ -1,0 +1,16 @@
+{
+    "name": "AAA.Source.Debugger",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8f96770a882461a409218502f5bb8842"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
