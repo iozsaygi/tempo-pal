@@ -1,6 +1,5 @@
 using AAA.Source.Debugger.Runtime;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 
