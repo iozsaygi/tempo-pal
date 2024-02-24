@@ -49,13 +49,13 @@ namespace AAA.Source.Service.Runtime
         private void InitializeApplicationServices()
         {
             for (byte i = 0; i < runtimeApplicationServices.Length; i++)
-                runtimeApplicationServices[i].Initialize(this);
+                runtimeApplicationServices[i].OnInitialize(this);
         }
 
         private void ShutdownApplicationServices()
         {
             for (byte i = 0; i < runtimeApplicationServices.Length; i++)
-                runtimeApplicationServices[i].Shutdown();
+                runtimeApplicationServices[i].OnShutdown();
         }
 
         private void DestroyApplicationServices()

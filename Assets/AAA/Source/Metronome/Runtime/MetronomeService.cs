@@ -13,7 +13,7 @@ namespace AAA.Source.Metronome.Runtime
         // Service components.
         private MetronomeController metronomeController;
 
-        public override void Initialize(ServiceController serviceController)
+        public override void OnInitialize(ServiceController serviceController)
         {
             // Cache required service references.
             debuggerService = serviceController.GetRuntimeApplicationServiceByType<DebuggerService>();
@@ -22,7 +22,7 @@ namespace AAA.Source.Metronome.Runtime
             metronomeController = new MetronomeController(debuggerService);
         }
 
-        public override void Shutdown()
+        public override void OnShutdown()
         {
         }
     }

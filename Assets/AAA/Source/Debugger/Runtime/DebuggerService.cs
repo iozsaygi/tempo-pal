@@ -6,12 +6,12 @@ namespace AAA.Source.Debugger.Runtime
     {
         public Debugger Debugger { get; private set; }
 
-        public override void Initialize(ServiceController serviceController)
+        public override void OnInitialize(ServiceController serviceController)
         {
             Debugger = new Debugger();
         }
 
-        public override void Shutdown()
+        public override void OnShutdown()
         {
         }
     }

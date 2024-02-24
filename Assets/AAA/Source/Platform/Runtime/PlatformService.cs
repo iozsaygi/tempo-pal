@@ -7,13 +7,13 @@ namespace AAA.Source.Platform.Runtime
     {
         [SerializeField] private PlatformConfiguration platformConfiguration;
 
-        public override void Initialize(ServiceController serviceController)
+        public override void OnInitialize(ServiceController serviceController)
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = platformConfiguration.TargetFrameRate;
         }
 
-        public override void Shutdown()
+        public override void OnShutdown()
         {
         }
     }
