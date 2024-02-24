@@ -38,6 +38,8 @@ namespace AAA.Source.Metronome.Runtime
             audioSource.clip = metronomeSettings.AudioClip;
 
             gameObject.transform.SetParent(metronomeService.transform, true);
+
+            debuggerService.Debugger.Log("Instantiated new audio bridge", nameof(InstantiateAudioBridge));
         }
     }
 }

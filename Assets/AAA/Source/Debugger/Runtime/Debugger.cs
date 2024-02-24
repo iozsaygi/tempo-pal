@@ -5,7 +5,7 @@ namespace AAA.Source.Debugger.Runtime
 {
     public class Debugger
     {
-        public static void Log(string message = null, string tag = null, LogCategory logCategory = LogCategory.Trace)
+        public void Log(string message = null, string tag = null, LogCategory logCategory = LogCategory.Trace)
         {
             Debug.Assert(!string.IsNullOrEmpty(message));
             Debug.Assert(!string.IsNullOrEmpty(tag));
