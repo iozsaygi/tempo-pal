@@ -19,7 +19,7 @@ namespace AAA.Source.Metronome.Runtime
             debuggerService = serviceController.GetRuntimeApplicationServiceByType<DebuggerService>();
 
             // Create the smaller components of this service.
-            metronomeController = new MetronomeController(debuggerService);
+            metronomeController = new MetronomeController(debuggerService, new MetronomeSettings(60, null));
         }
 
         public override void OnShutdown()

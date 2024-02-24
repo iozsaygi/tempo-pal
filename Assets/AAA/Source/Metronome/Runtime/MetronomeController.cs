@@ -8,9 +8,12 @@ namespace AAA.Source.Metronome.Runtime
     {
         private readonly DebuggerService debuggerService;
 
-        public MetronomeController(DebuggerService debuggerService)
+        private readonly MetronomeSettings metronomeSettings;
+
+        public MetronomeController(DebuggerService debuggerService, MetronomeSettings metronomeSettings)
         {
             this.debuggerService = debuggerService;
+            this.metronomeSettings = metronomeSettings;
         }
     }
 }
