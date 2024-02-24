@@ -2,7 +2,8 @@
     "name": "AAA.Source.Metronome",
     "rootNamespace": "",
     "references": [
-        "GUID:8f96770a882461a409218502f5bb8842"
+        "GUID:8f96770a882461a409218502f5bb8842",
+        "GUID:90d49e0c0c2b1a641bfe0b9ad07c7de8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
