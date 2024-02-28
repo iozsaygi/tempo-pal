@@ -67,9 +67,12 @@ namespace AAA.Source.Metronome.Runtime
 
         private void Click()
         {
+            const float accuracyReference = 60000.0f;
+            var sleepDurationInMilliseconds = (int)(accuracyReference / metronomeSettings.BeatsPerMinute);
+
             while (isThreadRunning)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(sleepDurationInMilliseconds);
                 Debug.Log("This is test message");
             }
         }
