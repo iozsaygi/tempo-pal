@@ -55,7 +55,7 @@ namespace AAA.Source.Metronome.Runtime
 
             gameObject.transform.SetParent(metronomeService.transform, true);
 
-            debuggerService.Debugger.Log("Instantiated new audio bridge", nameof(InstantiateAudioBridge));
+            debuggerService.Debugger.Log("Instantiated new audio bridge", nameof(MetronomeController));
         }
 
         private void SetupThread()
@@ -72,8 +72,10 @@ namespace AAA.Source.Metronome.Runtime
 
             while (isThreadRunning)
             {
+                audioSource.Play();
+                
+                // TODO: See if we need better way to manage thread than just a 'Sleep' function.
                 Thread.Sleep(sleepDurationInMilliseconds);
-                Debug.Log("This is test message");
             }
         }
     }

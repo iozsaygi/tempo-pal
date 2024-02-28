@@ -1,5 +1,6 @@
 using AAA.Source.Debugger.Runtime;
 using AAA.Source.Service.Runtime;
+using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
@@ -7,6 +8,10 @@ namespace AAA.Source.Metronome.Runtime
 {
     public class MetronomeService : ApplicationService
     {
+        // Required serializations.
+        // TODO: See if we can use some kind of settings objects instead of direct audio clip reference.
+        [SerializeField] private AudioClip audioClip;
+
         // Dependent service references.
         private DebuggerService debuggerService;
 
@@ -19,7 +24,9 @@ namespace AAA.Source.Metronome.Runtime
             debuggerService = serviceController.GetRuntimeApplicationServiceByType<DebuggerService>();
 
             // Create the smaller components of this service.
-            metronomeController = new MetronomeController(debuggerService, this, new MetronomeSettings(60, 100, null));
+            metronomeController =
+                new MetronomeController(debuggerService, this, new MetronomeSettings(60, 100, audioClip));
+
             metronomeController.Start();
         }
 
