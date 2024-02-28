@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: a3c0a3b63f5fc3949a699817868d00ea, type: 3}
-  metronomeMainThreadControllerPrefab: {fileID: 2180591571685307167, guid: 5a21916a2753c0f449169323a9615b0e, type: 3}
+  metronomeMainThreadDispatcherPrefab: {fileID: 2180591571685307167, guid: 5a21916a2753c0f449169323a9615b0e, type: 3}
