@@ -12,6 +12,7 @@ namespace AAA.Source.Metronome.Runtime
         private readonly DebuggerService debuggerService;
         private readonly MetronomeService metronomeService;
         private readonly MetronomeSettings metronomeSettings;
+        private readonly MetronomeMainThreadDispatcher metronomeMainThreadDispatcher;
 
         // Required references for audio bridge.
         private GameObject gameObject;
@@ -22,11 +23,12 @@ namespace AAA.Source.Metronome.Runtime
         private bool isThreadRunning;
 
         public MetronomeController(DebuggerService debuggerService, MetronomeService metronomeService,
-            MetronomeSettings metronomeSettings)
+            MetronomeSettings metronomeSettings, MetronomeMainThreadDispatcher metronomeMainThreadDispatcher)
         {
             this.debuggerService = debuggerService;
             this.metronomeService = metronomeService;
             this.metronomeSettings = metronomeSettings;
+            this.metronomeMainThreadDispatcher = metronomeMainThreadDispatcher;
         }
 
         public void Start()
@@ -72,8 +74,8 @@ namespace AAA.Source.Metronome.Runtime
 
             while (isThreadRunning)
             {
-                audioSource.Play();
-                
+                metronomeMainThreadDispatcher.QueueClickOnMainThread(() => { audioSource.Play(); });
+
                 // TODO: See if we need better way to manage thread than just a 'Sleep' function.
                 Thread.Sleep(sleepDurationInMilliseconds);
             }
