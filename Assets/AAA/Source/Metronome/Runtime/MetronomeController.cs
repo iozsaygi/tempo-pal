@@ -74,10 +74,10 @@ namespace AAA.Source.Metronome.Runtime
 
             while (isThreadRunning)
             {
-                metronomeMainThreadDispatcher.QueueClickOnMainThread(() => { audioSource.Play(); });
-
                 // TODO: See if we need better way to manage thread than just a 'Sleep' function.
                 Thread.Sleep(sleepDurationInMilliseconds);
+
+                metronomeMainThreadDispatcher.QueueClickOnMainThread(() => { audioSource.Play(); });
             }
         }
     }
