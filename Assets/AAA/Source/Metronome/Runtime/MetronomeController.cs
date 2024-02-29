@@ -54,6 +54,7 @@ namespace AAA.Source.Metronome.Runtime
             audioSource.playOnAwake = false;
             audioSource.loop = false;
             audioSource.clip = metronomeSettings.AudioClip;
+            audioSource.volume = metronomeSettings.Volume;
 
             gameObject.transform.SetParent(metronomeService.transform, true);
 
