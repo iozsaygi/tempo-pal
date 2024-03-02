@@ -10,6 +10,8 @@ namespace AAA.Source.UI.Runtime
     {
         // Required serializations.
         [SerializeField] private BPMView bpmView;
+        [SerializeField] private BPMManipulationButton bpmIncreaseManipulationButton;
+        [SerializeField] private BPMManipulationButton bpmDecreaseManipulationButton;
 
         // Dependent service references.
         private MetronomeService metronomeService;
@@ -17,6 +19,10 @@ namespace AAA.Source.UI.Runtime
         public override void OnInitialize(ServiceController serviceController)
         {
             metronomeService = serviceController.GetRuntimeApplicationServiceByType<MetronomeService>();
+
+            bpmIncreaseManipulationButton.Inject(metronomeService.MetronomeController);
+            bpmDecreaseManipulationButton.Inject(metronomeService.MetronomeController);
+
             bpmView.UpdateView(metronomeService.MetronomeController);
         }
 

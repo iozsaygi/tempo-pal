@@ -11,8 +11,8 @@ namespace AAA.Source.Metronome.Runtime
         // Dependencies.
         private readonly DebuggerService debuggerService;
         private readonly MetronomeService metronomeService;
-        private readonly MetronomeSettings metronomeSettings;
         private readonly MetronomeMainThreadDispatcher metronomeMainThreadDispatcher;
+        private MetronomeSettings metronomeSettings;
 
         // Required references for audio bridge.
         private GameObject gameObject;
@@ -31,9 +31,25 @@ namespace AAA.Source.Metronome.Runtime
             this.metronomeMainThreadDispatcher = metronomeMainThreadDispatcher;
         }
 
+        public void InstantiateAudioBridge()
+        {
+            // Create required objects.
+            gameObject = new GameObject(nameof(MetronomeController));
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+            // Update audio source settings.
+            audioSource.playOnAwake = false;
+            audioSource.loop = false;
+            audioSource.clip = metronomeSettings.AudioClip;
+            audioSource.volume = metronomeSettings.Volume;
+
+            gameObject.transform.SetParent(metronomeService.transform, true);
+
+            debuggerService.Debugger.Log("Instantiated new audio bridge", nameof(MetronomeController));
+        }
+
         public void Start()
         {
-            InstantiateAudioBridge();
             SetupThread();
         }
 
@@ -49,21 +65,9 @@ namespace AAA.Source.Metronome.Runtime
             return metronomeSettings;
         }
 
-        private void InstantiateAudioBridge()
+        public void UpdateMetronomeSettings(MetronomeSettings newMetronomeSettings)
         {
-            // Create required objects.
-            gameObject = new GameObject(nameof(MetronomeController));
-            audioSource = gameObject.AddComponent<AudioSource>();
-
-            // Update audio source settings.
-            audioSource.playOnAwake = false;
-            audioSource.loop = false;
-            audioSource.clip = metronomeSettings.AudioClip;
-            audioSource.volume = metronomeSettings.Volume;
-
-            gameObject.transform.SetParent(metronomeService.transform, true);
-
-            debuggerService.Debugger.Log("Instantiated new audio bridge", nameof(MetronomeController));
+            metronomeSettings = newMetronomeSettings;
         }
 
         private void SetupThread()

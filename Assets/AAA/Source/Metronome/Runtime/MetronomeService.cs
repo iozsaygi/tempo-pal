@@ -35,6 +35,7 @@ namespace AAA.Source.Metronome.Runtime
                 new MetronomeController(debuggerService, this, new MetronomeSettings(60, 100, audioClip),
                     metronomeMainThreadController);
 
+            MetronomeController.InstantiateAudioBridge();
             MetronomeController.Start();
         }
 
