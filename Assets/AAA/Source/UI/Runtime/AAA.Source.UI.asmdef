@@ -2,6 +2,7 @@
     "name": "AAA.Source.UI",
     "rootNamespace": "",
     "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
         "GUID:8f96770a882461a409218502f5bb8842"
     ],
     "includePlatforms": [],
