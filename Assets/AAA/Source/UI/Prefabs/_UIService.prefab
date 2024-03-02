@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 4021108243109572805}
   - component: {fileID: 798590416363800871}
   - component: {fileID: 8157334452305140812}
+  - component: {fileID: 5215929222370768245}
   m_Layer: 0
   m_Name: _BPMView
   m_TagString: Untagged
@@ -268,6 +269,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5215929222370768245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078098467518814887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bbed2bb52bb8743bc43aedba9eb081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 8157334452305140812}
 --- !u!1 &5145993796287785267
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c583db6c985599a4c9cf92dc931e82c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bpmView: {fileID: 5215929222370768245}
 --- !u!1 &6394035970753641328
 GameObject:
   m_ObjectHideFlags: 0

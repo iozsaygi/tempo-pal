@@ -8,6 +8,9 @@ namespace AAA.Source.Metronome.Runtime
 {
     public class MetronomeService : ApplicationService
     {
+        // Service components.
+        public MetronomeController MetronomeController { get; private set; }
+
         // Required serializations.
         // TODO: See if we can use some kind of settings objects instead of direct audio clip reference.
         [SerializeField] private AudioClip audioClip;
@@ -15,9 +18,6 @@ namespace AAA.Source.Metronome.Runtime
 
         // Dependent service references.
         private DebuggerService debuggerService;
-
-        // Service components.
-        private MetronomeController metronomeController;
 
         public override void OnInitialize(ServiceController serviceController)
         {
@@ -31,16 +31,16 @@ namespace AAA.Source.Metronome.Runtime
             metronomeMainThreadController.transform.SetParent(transform, true);
 
             // Create the smaller components of this service.
-            metronomeController =
+            MetronomeController =
                 new MetronomeController(debuggerService, this, new MetronomeSettings(60, 100, audioClip),
                     metronomeMainThreadController);
 
-            metronomeController.Start();
+            MetronomeController.Start();
         }
 
         public override void OnShutdown()
         {
-            metronomeController.Stop();
+            MetronomeController.Stop();
         }
     }
 }

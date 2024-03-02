@@ -44,6 +44,11 @@ namespace AAA.Source.Metronome.Runtime
             isThreadRunning = false;
         }
 
+        public MetronomeSettings GetCurrentMetronomeSettings()
+        {
+            return metronomeSettings;
+        }
+
         private void InstantiateAudioBridge()
         {
             // Create required objects.
