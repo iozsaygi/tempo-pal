@@ -7,8 +7,9 @@ implementation of [dependency injection](https://en.wikipedia.org/wiki/Dependenc
 
 ## Screenshots
 
-![First screenshot](http://url/to/img.png)
-![Second screenshot](http://url/to/img.png)
+![First screenshot](https://github.com/iozsaygi/tempo-pal/blob/main/Assets/AAA/Textures/Screenshots/0.png)
+
+![Second screenshot](https://github.com/iozsaygi/tempo-pal/blob/main/Assets/AAA/Textures/Screenshots/1.png)
 
 ## Third-party
 
